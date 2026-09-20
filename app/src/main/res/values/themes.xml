@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CORTEX.Default" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#A78BFA</item>
+        <item name="colorOnPrimary">#221047</item>
+        <item name="colorPrimaryContainer">#4F378B</item>
+        <item name="colorOnPrimaryContainer">#EADDFF</item>
+        <item name="colorSecondary">#CCC2DC</item>
+        <item name="colorOnSecondary">#332D41</item>
+        <item name="colorSecondaryContainer">#4A4458</item>
+        <item name="colorOnSecondaryContainer">#E8DEF8</item>
+        <item name="android:colorBackground">#141218</item>
+        <item name="colorOnBackground">#E6E1E5</item>
+        <item name="colorSurface">#1C1B22</item>
+        <item name="colorOnSurface">#E6E1E5</item>
+        <item name="colorSurfaceVariant">#49454F</item>
+        <item name="colorOnSurfaceVariant">#CAC4D0</item>
+        <item name="colorOutline">#938F99</item>
+    </style>
+
+    <style name="Theme.CORTEX.Amoled" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#BB86FC</item>
+        <item name="colorOnPrimary">#21104A</item>
+        <item name="colorPrimaryContainer">#33285B</item>
+        <item name="colorOnPrimaryContainer">#EADDFF</item>
+        <item name="colorSecondary">#D0BCFF</item>
+        <item name="colorOnSecondary">#261443</item>
+        <item name="colorSecondaryContainer">#262333</item>
+        <item name="colorOnSecondaryContainer">#E8DEF8</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="colorOnBackground">#E6E1E5</item>
+        <item name="colorSurface">#0A0A0A</item>
+        <item name="colorOnSurface">#E6E1E5</item>
+        <item name="colorSurfaceVariant">#1E1E22</item>
+        <item name="colorOnSurfaceVariant">#CAC4D0</item>
+        <item name="colorOutline">#6D6D74</item>
+    </style>
+
+    <style name="Theme.CORTEX.Ocean" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#4FC3F7</item>
+        <item name="colorOnPrimary">#00344D</item>
+        <item name="colorPrimaryContainer">#004B6E</item>
+        <item name="colorOnPrimaryContainer">#C9E6FF</item>
+        <item name="colorSecondary">#81D4FA</item>
+        <item name="colorOnSecondary">#00344D</item>
+        <item name="colorSecondaryContainer">#0F3A4F</item>
+        <item name="colorOnSecondaryContainer">#C9E6FF</item>
+        <item name="android:colorBackground">#0A1622</item>
+        <item name="colorOnBackground">#E1E8EE</item>
+        <item name="colorSurface">#0E1C2B</item>
+        <item name="colorOnSurface">#E1E8EE</item>
+        <item name="colorSurfaceVariant">#2A3B4C</item>
+        <item name="colorOnSurfaceVariant">#C0CCD8</item>
+        <item name="colorOutline">#8A99A8</item>
+    </style>
+
+    <style name="Theme.CORTEX.Forest" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#81C784</item>
+        <item name="colorOnPrimary">#0A2E0C</item>
+        <item name="colorPrimaryContainer">#1B4D20</item>
+        <item name="colorOnPrimaryContainer">#C8F7C9</item>
+        <item name="colorSecondary">#A5D6A7</item>
+        <item name="colorOnSecondary">#0A2E0C</item>
+        <item name="colorSecondaryContainer">#1E3B22</item>
+        <item name="colorOnSecondaryContainer">#C8F7C9</item>
+        <item name="android:colorBackground">#0A140D</item>
+        <item name="colorOnBackground">#E0E8E0</item>
+        <item name="colorSurface">#0F1B11</item>
+        <item name="colorOnSurface">#E0E8E0</item>
+        <item name="colorSurfaceVariant">#26352A</item>
+        <item name="colorOnSurfaceVariant">#BFCBBF</item>
+        <item name="colorOutline">#879587</item>
+    </style>
+
+    <style name="Theme.CORTEX.Sunset" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#FF8A65</item>
+        <item name="colorOnPrimary">#3E1300</item>
+        <item name="colorPrimaryContainer">#7A3B1E</item>
+        <item name="colorOnPrimaryContainer">#FFDBCC</item>
+        <item name="colorSecondary">#FFAB91</item>
+        <item name="colorOnSecondary">#3E1300</item>
+        <item name="colorSecondaryContainer">#5C3A2E</item>
+        <item name="colorOnSecondaryContainer">#FFDBCC</item>
+        <item name="android:colorBackground">#181008</item>
+        <item name="colorOnBackground">#EFE5DE</item>
+        <item name="colorSurface">#1F150D</item>
+        <item name="colorOnSurface">#EFE5DE</item>
+        <item name="colorSurfaceVariant">#443327</item>
+        <item name="colorOnSurfaceVariant">#D9C7BB</item>
+        <item name="colorOutline">#9C8A7D</item>
+    </style>
+
+    <style name="Theme.CORTEX.Crimson" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#EF5350</item>
+        <item name="colorOnPrimary">#3B0405</item>
+        <item name="colorPrimaryContainer">#7A2224</item>
+        <item name="colorOnPrimaryContainer">#FFDAD6</item>
+        <item name="colorSecondary">#F2B8B5</item>
+        <item name="colorOnSecondary">#2B1918</item>
+        <item name="colorSecondaryContainer">#422E2C</item>
+        <item name="colorOnSecondaryContainer">#FFDAD6</item>
+        <item name="android:colorBackground">#170B0B</item>
+        <item name="colorOnBackground">#ECE0DF</item>
+        <item name="colorSurface">#1D1010</item>
+        <item name="colorOnSurface">#ECE0DF</item>
+        <item name="colorSurfaceVariant">#413635</item>
+        <item name="colorOnSurfaceVariant">#D3C4C2</item>
+        <item name="colorOutline">#9C8E8D</item>
+    </style>
+
+    <style name="Theme.CORTEX.Daylight" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#6750A4</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#EADDFF</item>
+        <item name="colorOnPrimaryContainer">#21005D</item>
+        <item name="colorSecondary">#625B71</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#E8DEF8</item>
+        <item name="colorOnSecondaryContainer">#1D192B</item>
+        <item name="android:colorBackground">#FFFBFE</item>
+        <item name="colorOnBackground">#1C1B1F</item>
+        <item name="colorSurface">#FFFBFE</item>
+        <item name="colorOnSurface">#1C1B1F</item>
+        <item name="colorSurfaceVariant">#E7E0EC</item>
+        <item name="colorOnSurfaceVariant">#49454F</item>
+        <item name="colorOutline">#79747E</item>
+    </style>
+</resources>
