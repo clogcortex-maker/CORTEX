@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.RadioGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -44,6 +43,8 @@ class MainActivity : AppCompatActivity() {
     private var pendingGuidePath: String? = null
     private var setupRunning = false
     private var appliedThemeKey: String = ""
+    private var engineFailed = false
+    private var queuedPrompt: String? = null
 
     private val engine: CortexEngine by lazy { CortexEngine(this) }
 
@@ -159,11 +160,17 @@ class MainActivity : AppCompatActivity() {
             try {
                 engine.ensurePlain(modelManager.modelDir.absolutePath)
                 engineReady = true
+                engineFailed = false
                 withContext(Dispatchers.Main) {
                     binding.statusChip.visibility = View.GONE
+                    queuedPrompt?.let { p ->
+                        queuedPrompt = null
+                        startGeneration(p, null, null, recordUserMessage = false)
+                    }
                 }
             } catch (t: Throwable) {
                 engineReady = false
+                engineFailed = true
                 withContext(Dispatchers.Main) {
                     binding.statusChip.visibility = View.GONE
                     addMessage(ChatMessage(nextId(), ChatMessage.Role.ASSISTANT_TEXT,
@@ -216,18 +223,35 @@ class MainActivity : AppCompatActivity() {
         if (generatingJob?.isActive == true) {
             Toast.makeText(this, R.string.busy, Toast.LENGTH_SHORT).show(); return
         }
+        binding.inputText.setText("")
+        val userMsg = ChatMessage(nextId(), ChatMessage.Role.USER, text = prompt)
+
         if (!engineReady) {
-            Toast.makeText(this, R.string.engine_not_ready, Toast.LENGTH_SHORT).show()
-            if (!modelManager.isBaseReady()) binding.setupOverlay.visibility = View.VISIBLE
+            addMessage(userMsg)
+            when {
+                !modelManager.isBaseReady() -> {
+                    binding.setupOverlay.visibility = View.VISIBLE
+                    addMessage(ChatMessage(nextId(), ChatMessage.Role.ASSISTANT_TEXT,
+                        text = getString(R.string.need_setup)))
+                }
+                engineFailed -> addMessage(ChatMessage(nextId(), ChatMessage.Role.ASSISTANT_TEXT,
+                    text = getString(R.string.engine_failed_send), error = true))
+                else -> {
+                    queuedPrompt = prompt
+                    addMessage(ChatMessage(nextId(), ChatMessage.Role.ASSISTANT_TEXT,
+                        text = getString(R.string.engine_loading_queued)))
+                }
+            }
             return
         }
-        binding.inputText.setText("")
+
+        addMessage(userMsg)
         val guide = pendingGuidePath
         if (guide != null) {
             clearPendingGuide()
             showRefineDialog(prompt, guide)
         } else {
-            startGeneration(prompt, null, null)
+            startGeneration(prompt, null, null, recordUserMessage = false)
         }
     }
 
@@ -253,15 +277,22 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun startGeneration(prompt: String, guidePath: String?, condition: Condition?) {
+    private fun startGeneration(
+        prompt: String,
+        guidePath: String?,
+        condition: Condition?,
+        recordUserMessage: Boolean = true
+    ) {
         val prefs = getSharedPreferences("cortex_prefs", MODE_PRIVATE)
         val iterations = prefs.getInt("iterations", 20)
         val displayEvery = prefs.getInt("display_every", 5).coerceAtLeast(1)
         val seed = if (prefs.getBoolean("seed_random", true))
             (1000..999999).random() else prefs.getInt("seed_fixed", 42)
 
-        addMessage(ChatMessage(nextId(), ChatMessage.Role.USER, text = prompt,
-            guidePath = guidePath, condition = condition?.wire))
+        if (recordUserMessage) {
+            addMessage(ChatMessage(nextId(), ChatMessage.Role.USER, text = prompt,
+                guidePath = guidePath, condition = condition?.wire))
+        }
         val progressMsg = addMessage(ChatMessage(nextId(), ChatMessage.Role.PROGRESS,
             text = getString(R.string.progress_starting), totalSteps = iterations, inProgress = true))
 
@@ -361,8 +392,7 @@ class MainActivity : AppCompatActivity() {
             ImageUtils.decodeScaled(f.absolutePath, 256)?.let {
                 binding.guideThumb.setImageBitmap(it)
             }
-            binding.guideThumb.visibility = View.VISIBLE
-            binding.removeGuideBtn.visibility = View.VISIBLE
+            binding.guideRow.visibility = View.VISIBLE
         } catch (t: Throwable) {
             Toast.makeText(this, R.string.err_attach, Toast.LENGTH_SHORT).show()
         }
@@ -370,8 +400,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearPendingGuide() {
         pendingGuidePath = null
-        binding.guideThumb.visibility = View.GONE
-        binding.removeGuideBtn.visibility = View.GONE
+        binding.guideRow.visibility = View.GONE
     }
 
     // ---------------- actions ----------------

@@ -107,16 +107,43 @@
         </ScrollView>
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/guideThumb"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/thumb_frame"
-        android:contentDescription="@string/guide_attached"
-        android:scaleType="centerCrop"
-        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/guideRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/guideThumb"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/thumb_frame"
+            android:contentDescription="@string/guide_attached"
+            android:scaleType="centerCrop" />
+
+        <ImageButton
+            android:id="@+id/removeGuideBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/remove_guide_desc"
+            android:src="@drawable/ic_close"
+            app:tint="?attr/colorOnSurfaceVariant" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/guide_attached"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="13sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -143,27 +170,19 @@
                 android:id="@+id/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/refine_hint"
+                android:hint="@string/input_hint"
                 android:inputType="textMultiLine|textCapSentences"
                 android:maxLines="4" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageButton
-            android:id="@+id/removeGuideBtn"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/remove_guide_desc"
-            android:src="@drawable/ic_close"
-            android:visibility="gone"
-            app:tint="?attr/colorOnSurfaceVariant" />
-
-        <ImageButton
+        <Button
             android:id="@+id/sendBtn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="?attr/colorPrimary"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:contentDescription="@string/send_desc"
-            android:src="@drawable/ic_send" />
+            app:icon="@drawable/ic_send"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp" />
     </LinearLayout>
 </LinearLayout>
