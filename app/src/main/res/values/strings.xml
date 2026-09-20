@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CORTEX</string>
+    <string name="settings_title">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="send_desc">Generate</string>
+    <string name="attach_desc">Attach guide image</string>
+    <string name="remove_guide_desc">Remove guide image</string>
+    <string name="welcome">Welcome to CORTEX — your on-device AI image studio. Describe an image and I will paint it right here on your phone, fully offline. Type a prompt below to begin.</string>
+    <string name="status_loading_model">Loading AI model…</string>
+    <string name="engine_init_failed">Could not start the on-device engine: %1$s\n\nCORTEX needs an arm64 phone with OpenCL GPU support and ~8 GB RAM for reliable generation.</string>
+    <string name="busy">Please wait — CORTEX is already generating.</string>
+    <string name="engine_not_ready">Engine is still loading. Try again in a moment.</string>
+
+    <string name="setup_title">Set up CORTEX</string>
+    <string name="setup_body">CORTEX runs Stable Diffusion 1.5 entirely on this device — no cloud, no server, no account.\n\nFirst run needs a one-time download of the model (~2 GB). Use Wi-Fi and keep the app open.\n\nNote: a device with 8 GB RAM is recommended; generation takes 15–60 seconds per image.</string>
+    <string name="setup_btn">Download model</string>
+    <string name="setup_downloading">Downloading…</string>
+    <string name="setup_stage_download">Downloading model</string>
+    <string name="setup_stage_unzip">Extracting model</string>
+    <string name="setup_stage_plugins">Downloading refine plugin</string>
+    <string name="setup_status">%1$s · %2$d%%</string>
+    <string name="setup_failed">Download failed: %1$s Check your connection and retry.</string>
+    <string name="setup_retry">Retry download</string>
+
+    <string name="refine_title">Refine image</string>
+    <string name="refine_hint">Describe the change, e.g. \"sunset sky, warmer colors\"</string>
+    <string name="generate">Generate</string>
+    <string name="cond_edge">Edge — keep the layout and lines</string>
+    <string name="cond_depth">Depth — keep the 3D structure</string>
+    <string name="cond_face">Face — keep the facial features</string>
+    <string name="refine_note">CORTEX regenerates the image guided by your original — like a remix, not a pixel edit.</string>
+
+    <string name="progress_starting">Preparing diffusion…</string>
+    <string name="progress_step">%1$d / %2$d</string>
+    <string name="downloading_plugin">Downloading refine model…</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancelled">Generation cancelled.</string>
+    <string name="cancelling">Cancelling…</string>
+    <string name="err_guide_read">Could not read the guide image.</string>
+    <string name="err_no_image">The engine returned no image.</string>
+    <string name="generation_failed">Generation failed: %1$s\n\nIf this mentions OpenCL or native libraries, this device may not support on-device generation.</string>
+    <string name="err_attach">Could not attach that image.</string>
+    <string name="image_meta">seed %1$d · %2$d steps</string>
+
+    <string name="saved_to_gallery">Saved to gallery</string>
+    <string name="save_failed">Could not save</string>
+
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_generation">Generation</string>
+    <string name="iterations_label">Steps (quality vs speed)</string>
+    <string name="display_label">Show progress every N steps</string>
+    <string name="settings_seed">Seed</string>
+    <string name="seed_random_label">Random seed for each image</string>
+    <string name="seed_fixed_label">Fixed seed</string>
+    <string name="settings_data">Data</string>
+    <string name="clear_chat">Clear conversation</string>
+    <string name="delete_models">Delete downloaded models (~2 GB)</string>
+    <string name="settings_about">About</string>
+    <string name="about_body">CORTEX generates images entirely on your device using Stable Diffusion v1.5 (CreativeML OpenRAIL-M licence — commercial use permitted with use restrictions) via Google MediaPipe (Apache 2.0). Model weights are downloaded once from Hugging Face and then used fully offline.\n\nImages are AI-generated. You are responsible for how you use them.</string>
+    <string name="confirm">Are you sure?</string>
+    <string name="clear_chat_confirm">This deletes the conversation history (generated images are kept on disk).</string>
+    <string name="delete_models_confirm">This deletes the AI model files. You will need to download them again (~2 GB) before generating new images.</string>
+    <string name="chat_cleared">Conversation cleared</string>
+    <string name="models_deleted">Model files deleted</string>
+    <string name="theme_applied">Theme applied — reopen CORTEX to see it</string>
+
+    <string name="detail_refine">Refine</string>
+    <string name="detail_save">Save</string>
+    <string name="detail_share">Share</string>
+    <string name="card_refine">Refine</string>
+    <string name="card_save">Save</string>
+    <string name="card_share">Share</string>
+    <string name="guide_attached">Guide image attached</string>
+</resources>

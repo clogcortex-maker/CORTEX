@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="error_text">#FFB4AB</color>
+    <color name="chat_text">#E6E1E5</color>
+    <color name="launcher_bg">#2E1065</color>
+</resources>
