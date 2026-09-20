@@ -4,10 +4,14 @@
     <string name="settings_title">Settings</string>
     <string name="action_settings">Settings</string>
     <string name="send_desc">Generate</string>
+    <string name="input_hint">Describe an image to create…</string>
+    <string name="need_setup">The AI model isn\'t on this device yet. Tap “Download model” above to fetch it once (~2 GB, Wi-Fi recommended) — then I can paint anything you describe.</string>
+    <string name="engine_loading_queued">The engine is still loading the AI model (this can take up to a minute after startup). Your prompt is queued — the image will generate automatically once it\'s ready.</string>
+    <string name="engine_failed_send">The on-device engine couldn\'t start, so I can\'t generate this prompt. CORTEX needs an arm64 phone with OpenCL GPU support and ideally 8 GB RAM.</string>
     <string name="attach_desc">Attach guide image</string>
     <string name="remove_guide_desc">Remove guide image</string>
     <string name="welcome">Welcome to CORTEX — your on-device AI image studio. Describe an image and I will paint it right here on your phone, fully offline. Type a prompt below to begin.</string>
-    <string name="status_loading_model">Loading AI model…</string>
+    <string name="status_loading_model">Loading AI model — this can take a minute…</string>
     <string name="engine_init_failed">Could not start the on-device engine: %1$s\n\nCORTEX needs an arm64 phone with OpenCL GPU support and ~8 GB RAM for reliable generation.</string>
     <string name="busy">Please wait — CORTEX is already generating.</string>
     <string name="engine_not_ready">Engine is still loading. Try again in a moment.</string>

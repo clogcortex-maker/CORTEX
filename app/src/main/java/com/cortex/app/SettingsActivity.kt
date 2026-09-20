@@ -3,7 +3,6 @@ package com.cortex.app
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
